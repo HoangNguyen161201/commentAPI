@@ -15,7 +15,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://epic-turing-81f56e.netlify.app',
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true
 }))
@@ -24,7 +24,7 @@ const server = http.createServer(app)
 const io = new Server(server, {
     cors: {
         // 
-        origin: 'http://localhost:3000',
+        origin: 'https://epic-turing-81f56e.netlify.app',
         methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
         credentials: true
       }
