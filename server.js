@@ -85,6 +85,6 @@ app.use('/api', commentRouter )
 app.use(checkError)
 
 // listen server
-server.listen(4000 | process.env.PORT, ()=> {
+server.listen(4000 || process.env.PORT, ()=> {
     console.log('http://localhost:4000')
 })
