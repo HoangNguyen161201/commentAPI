@@ -14,7 +14,11 @@ dotenv.config()
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded())
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: ['POST', 'GET', 'PATCH'],
+    credentials: true
+}))
 
 const server = http.createServer(app)
 const io = new Server(server)
