@@ -22,7 +22,12 @@ app.use(cors({
 }))
 
 const server = http.createServer(app)
-const io = new Server(server)
+const io = new Server(server, {
+    origin: '*',
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    preflightContinue: false,
+})
 
 // connect mongoode
 mongoose.connect('mongodb+srv://admin3:kingspear1999@cluster0.trnqb.mongodb.net/commentDB?retryWrites=true&w=majority').then(result=> {
