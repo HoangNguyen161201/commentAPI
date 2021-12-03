@@ -80,6 +80,9 @@ io.on('connection', socket=> {
     })
 })
 
+app.get('/', (req, res)=> {
+    res.send('hello everyone')
+})
 app.use('/api', productRouter)
 app.use('/api', commentRouter )
 app.use(checkError)
