@@ -23,10 +23,11 @@ app.use(cors({
 
 const server = http.createServer(app)
 const io = new Server(server, {
-    origin: '*',
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-    preflightContinue: false,
+    cors: {
+        origin: "http://locahost:3000",
+        methods: ["GET", "POST", "PATCh"],
+        credentials: true
+      }
 })
 
 // connect mongoode
